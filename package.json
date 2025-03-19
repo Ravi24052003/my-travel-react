@@ -26,7 +26,8 @@
     "react-select": "^5.8.2",
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.6",
-    "sitemap": "^8.0.0"
+    "sitemap": "^8.0.0",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

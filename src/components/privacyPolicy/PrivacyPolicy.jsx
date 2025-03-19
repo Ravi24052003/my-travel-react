@@ -1,6 +1,4 @@
-import React from 'react';
-
-
+import {} from 'react';
 const PrivacyPolicy = () => {
   return (
     <div className="flex justify-center">
