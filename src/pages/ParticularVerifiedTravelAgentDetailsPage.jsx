@@ -8,6 +8,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaPhone,
+  FaSearch,
+  FaGlobe
+} from "react-icons/fa";
+import conf from "../../conf/conf";
 
 const ParticularVerifiedTravelAgentDetailsPage = () => {
   const { id } = useParams();
@@ -19,6 +29,7 @@ const ParticularVerifiedTravelAgentDetailsPage = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(publicGetParticularVerifiedTravelAgentAsync(id));
@@ -35,6 +46,18 @@ const ParticularVerifiedTravelAgentDetailsPage = () => {
     setComment("");
   };
 
+
+  console.log("verifiedTravelAgentDetails", verifiedTravelAgentDetails);
+
+
+  const handlePhoneModalOpen = function () {
+    setIsPhoneModalOpen(true);
+  };
+
+  const handlePhoneModalClose = function () {
+    setIsPhoneModalOpen(false);
+  };
+
   return (
     <>
       <Navbar />
@@ -47,13 +70,93 @@ const ParticularVerifiedTravelAgentDetailsPage = () => {
           
           {/* Left Box */}
           <div className="w-full md:w-2/3 bg-white shadow-lg p-4 rounded-lg">
+            
             {/* Overview Section */}
+
+          <h1 className=" font-bold text-2xl p-4">{verifiedTravelAgentDetails?.company_name}</h1>
+
+
+          <div className=" flex justify-start items-start gap-10 flex-wrap">
+             <div className=" relative">
+                                     {/* phone modal starts here */}
+                                     {isPhoneModalOpen && (
+                                       <div className=" absolute left-[50px] bottom-[-10px] px-4 py-2 bg-[#4267B2] text-white rounded cursor-pointer">
+                                         <p className=" pr-4">{verifiedTravelAgentDetails?.phone}</p>
+           
+                                         <button
+                                           className="absolute top-[0px] right-[5px] text-white text-3xl"
+                                           onClick={handlePhoneModalClose}
+                                         >
+                                           &times;
+                                         </button>
+                                       </div>
+                                     )}
+                                     {/* phone modal ends here  */}
+           
+                                     <FaPhone
+                                       onClick={() => handlePhoneModalOpen()}
+                                       className="h-6 w-6 text-[#4267B2] cursor-pointer"
+                                     />
+                                   </div>
+
+
+
+                        <a
+                          href={`https://api.whatsapp.com/send/?phone=${verifiedTravelAgentDetails?.whatsapp}&text&type=phone_number&app_absent=0`}
+                          target="_blank"
+                          className="text-[#2fb347]"
+                        >
+                          <FaWhatsapp className="h-6 w-6" />
+                        </a>
+
+
+                        <a
+                          href={`${verifiedTravelAgentDetails?.facebook}`}
+                          target="_blank"
+                          className="text-[#4267B2]"
+                        >
+                          <FaFacebookF className="h-6 w-6" />
+                        </a>
+
+
+                        <a
+                          href={`${verifiedTravelAgentDetails?.instagram}`}
+                          target="_blank"
+                          className="text-[#E1306C]"
+                        >
+                          <FaInstagram className="h-6 w-6" />
+                        </a>
+
+
+                        <a
+                          href={`${verifiedTravelAgentDetails?.youtube}`}
+                          target="_blank"
+                          className="text-[#E1306C]"
+                        >
+                          <FaYoutube className="h-6 w-6" />
+                        </a>
+            
+          </div>
+
             <div className="border-b p-4 font-semibold text-lg">Overview</div>
             <div className="p-4">
-              <h3 className="text-lg font-semibold">Awards</h3>
-              <img src="/dummy-award.jpg" alt="Award" className="w-full h-40 object-cover rounded-md mt-2" />
-              <h3 className="text-lg font-semibold mt-4">Certificates</h3>
-              <img src="/dummy-certificate.jpg" alt="Certificate" className="w-full h-40 object-cover rounded-md mt-2" />
+              <div>
+                <img src={conf.laravelBaseUrl+"/"+verifiedTravelAgentDetails?.company?.company_logo} alt="" width={100} />
+              </div>
+              <p className=" py-2">{verifiedTravelAgentDetails?.company?.about_company}</p>
+              <p className=" py-2">{verifiedTravelAgentDetails?.company?.company_address}</p>
+              <p className=" py-2">{verifiedTravelAgentDetails?.company?.company_city}</p>
+
+              <a
+                          href={`${verifiedTravelAgentDetails?.company?.company_website}`}
+                          target="_blank"
+                          className="text-[#E1306C] my-2"
+                        >
+                          <FaGlobe className="h-6 w-6" />
+                        </a>
+
+                        <p className="py-2">{verifiedTravelAgentDetails?.company?.services_offered}</p>
+              
             </div>
 
             {/* Photos Section */}
