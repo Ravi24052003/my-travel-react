@@ -8,6 +8,7 @@ import {
   FaChevronDown,
   FaChevronUp,
 } from "react-icons/fa";
+import RegistrationPage from "./RegistrationPage";
 import tripIdeaItems from "../packages/Allpackages/tripIdeas";
 
 
@@ -459,14 +460,14 @@ const ContactUs = ({ mobile = false }) => {
 
 
 const TravelZone = () => {
-  const [isRequestQuoteModalOpen, setIsRequestQuoteModalOpen] = useState(false);
+  const [isRegistrationPageModalOpen, setIsRegistrationPageModalOpen] = useState(false);
 
-  const handleRequestQuoteOpenModal = () => {
-    setIsRequestQuoteModalOpen(true);
+  const handleRegistrationPageOpenModal = () => {
+    setIsRegistrationPageModalOpen(true);
   };
 
-  const handleRequestQuoteCloseModal = () => {
-    setIsRequestQuoteModalOpen(false);
+  const handleRegistrationPageCloseModal = () => {
+    setIsRegistrationPageModalOpen(false);
   };
 
   return (
@@ -476,17 +477,14 @@ const TravelZone = () => {
      
 
      <button
-  onClick={handleRequestQuoteOpenModal}
+  onClick={handleRegistrationPageOpenModal}
   className="bg-gradient-to-r from-blue-500 to-blue-900 text-white px-4 py-2 rounded-md"
 >
-  Travel Zone
+  Unique Zone
 </button>
 
 
-      <RequestQuoteModal
-        isRequestQuoteModalOpen={isRequestQuoteModalOpen}
-        handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
-      />
+     <RegistrationPage isRegistrationPageModalOpen={isRegistrationPageModalOpen} handleRegistrationPageCloseModal={handleRegistrationPageCloseModal} />
     </div>
   );
 };
