@@ -251,6 +251,8 @@ const NavLinks = ({ menuOpen }) => {
 
         </button>
 
+        <TravelZone />
+
         {menuOpen && <ContactUs mobile />}
       </ul>
     </div>
@@ -444,6 +446,42 @@ const ContactUs = ({ mobile = false }) => {
       >
         Trip Planners
       </button>
+
+      <RequestQuoteModal
+        isRequestQuoteModalOpen={isRequestQuoteModalOpen}
+        handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
+      />
+    </div>
+  );
+};
+
+
+
+
+const TravelZone = () => {
+  const [isRequestQuoteModalOpen, setIsRequestQuoteModalOpen] = useState(false);
+
+  const handleRequestQuoteOpenModal = () => {
+    setIsRequestQuoteModalOpen(true);
+  };
+
+  const handleRequestQuoteCloseModal = () => {
+    setIsRequestQuoteModalOpen(false);
+  };
+
+  return (
+    <div
+      className={`flex items-center gap-6`}
+    >
+     
+
+     <button
+  onClick={handleRequestQuoteOpenModal}
+  className="bg-gradient-to-r from-blue-500 to-blue-900 text-white px-4 py-2 rounded-md"
+>
+  Travel Zone
+</button>
+
 
       <RequestQuoteModal
         isRequestQuoteModalOpen={isRequestQuoteModalOpen}
