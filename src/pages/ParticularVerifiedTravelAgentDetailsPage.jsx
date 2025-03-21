@@ -155,7 +155,25 @@ const ParticularVerifiedTravelAgentDetailsPage = () => {
                           <FaGlobe className="h-6 w-6" />
                         </a>
 
-                        <p className="py-2">{verifiedTravelAgentDetails?.company?.services_offered}</p>
+
+{
+   Array.isArray(verifiedTravelAgentDetails?.company?.services_offered) &&
+   verifiedTravelAgentDetails?.company?.services_offered.length > 0 &&
+<h2 className=" bg-red-500 rounded px-3 py-2 text-white inline-block mt-5 mb-2">Services Offered</h2>
+}
+
+
+
+<div className=" flex justify-start items-start gap-10 flex-wrap">
+{
+ 
+  verifiedTravelAgentDetails.company.services_offered.map((service, index) => (
+    <p key={index} className=" bg-blue-600 text-white rounded px-2 py-1">{service?.label}</p>
+  ))
+}
+</div>
+ 
+
               
             </div>
 

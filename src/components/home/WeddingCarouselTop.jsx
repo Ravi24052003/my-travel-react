@@ -1,27 +1,65 @@
 import React, { useState, useEffect } from "react";
-import tripImage1 from "/Images/Homepageimages/trip_image1.png";
-import tripImage2 from "/Images/Homepageimages/trip_image2.png";
+import bdResort from "/Images/Homepageimages/bd_resort_top_banner.png";
+import kesari from "/Images/Homepageimages/kesari.png";
+import southIndian from "/Images/Homepageimages/south_indian_top_banner.png";
+import takeAtrip from "/Images/Homepageimages/take_a_trip_tours_and_travels.png";
+import sotc from "/Images/Homepageimages/sotc.png";
+import travelTriangle from "/Images/Homepageimages/travel_triangle.png";
+import clubMahindra from "/Images/Homepageimages/club_mahindra.png";
 
 const WeddingCarouselTop = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image: tripImage1,
+      image: bdResort,
         // "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 1",
-      title: "Himalayan Circle",
-      link: "https://himalayancircle.com/"
+      companyName: "BD Resort",
+      title: "BD Resort",
+      link: "https://bdresortmanali.com/"
     },
     {
-      image: tripImage2,
+      image: kesari,
         // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 2",
-      title: "Kamakshi Holidays",
-      link: "https://kamakshiholidays.com"
+      companyName: "Keasri Tours",
+      title: "Keasri Tours",
+      link: "https://www.kesari.in/"
     },
-   
-   
+    {
+      image: sotc,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      companyName: "SOTC",
+      title: "SOTC",
+      link: "https://www.sotc.in/"
+    },
+    {
+      image: travelTriangle,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      companyName: "Travel Triangle",
+      title: "Travel Triangle",
+      link: "https://traveltriangle.com/"
+    },
+    {
+      image: clubMahindra,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      companyName: "Club Mahindra",
+      title: "Club Mahindra",
+      link: "https://www.clubmahindra.com/"
+    },
+    {
+      image: southIndian,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      companyName: "South Indian Holidays",
+      title: "South Indian Holidays",
+      link: "https://www.southindianholidays.in/"
+    },
+    {
+      image: takeAtrip,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      companyName: "Take A Trip",
+      title: "Take A Trip",
+      link: "https://takeatripholidays.in/"
+    },
     // {
     //   image:
     //     "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",

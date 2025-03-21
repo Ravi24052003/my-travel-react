@@ -47,6 +47,7 @@ import AllInternationalItinerariesPage from "./pages/AllInternationalItineraries
 import AllDomesticItinerariesPage from "./pages/AllDomesticItinerariesPage.jsx";
 import AllPlacesToVisit from "./pages/AllPlacesToVisit.jsx";
 import ParticularVerifiedTravelAgentDetailsPage from "./pages/ParticularVerifiedTravelAgentDetailsPage.jsx";
+import TravelnWorldRegistrationPage from "./pages/TravelnWorldRegistrationPage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -77,6 +78,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path='/all-domestic-itineraries' element={<AllDomesticItinerariesPage />} />
             <Route path="/all-places-to-visit" element={<AllPlacesToVisit />} />
             <Route path="/verified-travel-agent/:id" element={<ParticularVerifiedTravelAgentDetailsPage />} />
+            <Route path="/travelnworld-registration" element={<TravelnWorldRegistrationPage />} />
 
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard-users" element={<DashboardUsers />} />

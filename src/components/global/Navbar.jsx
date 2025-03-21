@@ -252,7 +252,9 @@ const NavLinks = ({ menuOpen }) => {
 
         </button>
 
-        <TravelZone />
+        {/* <TravelZone /> */}
+
+        <Link className="bg-gradient-to-r from-blue-500 to-blue-900 text-white px-4 py-2 rounded-md" to="/travelnworld-registration" target="_blank">Unique Zone</Link>
 
         {menuOpen && <ContactUs mobile />}
       </ul>
