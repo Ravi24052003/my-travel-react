@@ -21,8 +21,8 @@ const WeddingCarouselTop = () => {
     {
       image: kesari,
         // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Keasri Tours",
-      title: "Keasri Tours",
+      companyName: "Kesari Tours",
+      title: "Kesari Tours",
       link: "https://www.kesari.in/"
     },
     {
@@ -96,7 +96,7 @@ const WeddingCarouselTop = () => {
     return () => clearInterval(interval); // Clear interval on component unmount
   }, [slides.length]);
   return (
-    <div className="relative overflow-hidden w-full h-28 ">
+    <div className="md:relative md:overflow-hidden w-full md:h-28 md:mb-auto overflow-x-hidden">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -104,16 +104,16 @@ const WeddingCarouselTop = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="flex h-28 w-full flex-row flex-shrink-0"
+            className="flex flex-col md:h-28 w-full md:flex-row flex-shrink-0"
           >
             <img
               src={slide.image}
-              className="sm:w-full object-cover w-1/2"
+              className="md:w-full object-contain"
               alt=""
             />
             <div
-              className="lg:w-[600px] w-[400px] p-5 bg-violet-950 text-white
-            flex flex-col lg:gap-5 gap-3 justify-center "
+              className="lg:w-[600px] md:w-[400px] w-full p-2 md:p-5 bg-violet-950 text-white
+            flex flex-col lg:gap-5 gap-3 justify-center"
             >
               <p className="lg:text-3xl text-base md:text-xl">{slide.title}</p>
               <p className="p-2 bg-white rounded-xl text-black lg:w-40 w-24 lg:text-base text-sm flex items-center justify-center">
@@ -128,3 +128,102 @@ const WeddingCarouselTop = () => {
 };
 
 export default WeddingCarouselTop;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className="relative overflow-hidden w-full h-28 ">
+<div
+  className="flex transition-transform duration-500"
+  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+>
+  {slides.map((slide, index) => (
+    <div
+      key={index}
+      className="flex h-28 w-full flex-row flex-shrink-0"
+    >
+      <img
+        src={slide.image}
+        className="sm:w-full object-cover w-1/2"
+        alt=""
+      />
+      <div
+        className="lg:w-[600px] w-[400px] p-5 bg-violet-950 text-white
+      flex flex-col lg:gap-5 gap-3 justify-center "
+      >
+        <p className="lg:text-3xl text-base md:text-xl">{slide.title}</p>
+        <p className="p-2 bg-white rounded-xl text-black lg:w-40 w-24 lg:text-base text-sm flex items-center justify-center">
+         <a href={slide?.link} target="_blank">Know more</a> 
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+</div> */}
