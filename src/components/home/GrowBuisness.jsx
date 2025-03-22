@@ -4,10 +4,10 @@ import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
 
 const images = [
+  "/Images/Homepageimages/s2_holidays.png",
+  "/Images/Homepageimages/travel_29.png",
+  "/Images/Homepageimages/admire_banner.png",
   "/Images/Homepageimages/grow_business.jpg",
-  "/Images/Homepageimages/about.png",
-  "/Images/Homepageimages/boat_heroImage.png",
-  "/Images/Homepageimages/goa.jpg",
 ];
 
 const GrowBusiness = () => {
@@ -47,14 +47,20 @@ const GrowBusiness = () => {
         >
           <div className="px-5 md:py-20 py-10 my-10 w-full h-full flex items-center justify-center">
             <div className="text-center text-white">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-                Grow your <br className="hidden md:block" />
-                <span className="text-white">Business</span> with Us
-              </h1>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-red-700 via-blue-800 to-gray-600 text-transparent bg-clip-text">
+  Grow your <br className="hidden md:block" />
+  <span className="text-transparent bg-clip-text">Business</span> with Us
+</h1>
 
-               <Link target="_blank" to="/contact" className="bg-white text-[#142035] font-medium px-9 py-2 rounded-full">
-               Contact Us
-               </Link>
+
+<Link 
+  target="_blank" 
+  to="/contact" 
+  className="bg-gradient-to-r from-red-500 to-blue-700 text-white font-medium px-9 py-3 rounded-full shadow-lg transition-transform transform hover:scale-105"
+>
+  Contact Us
+</Link>
+
 
             </div>
           </div>

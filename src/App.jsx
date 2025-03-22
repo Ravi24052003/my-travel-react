@@ -22,6 +22,7 @@ import TrendingDestination from "./components/home/TrendingDestination";
 import AboutUsSection from "./components/home/AboutUsSection";
 import TrendingPackage from "./components/home/TrendingPackage";
 import PlacesToVisit from "./components/home/PlacesToVisit";
+import Client2 from "./components/home/Client2";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -81,6 +82,7 @@ if (currentDate >= targetDate) {
           <Herosection />
           <AboutUsSection />
           <Client />
+          <Client2 />
           <TrendingDestination />
           <OurTravelAgents />
           <InternationalTopTourPackage />
