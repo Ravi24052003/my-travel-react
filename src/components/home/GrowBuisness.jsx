@@ -7,6 +7,8 @@ const images = [
   "/Images/Homepageimages/s2_holidays.png",
   "/Images/Homepageimages/travel_29.png",
   "/Images/Homepageimages/admire_banner.png",
+  "/Images/Homepageimages/t2h.png",
+  "/Images/Homepageimages/Trinity_World_Holidays.png",
 ];
 
 const GrowBusiness = () => {
