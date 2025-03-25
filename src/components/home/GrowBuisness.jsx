@@ -47,7 +47,7 @@ const GrowBusiness = () => {
           style={{ backgroundImage: `url(${image})` }}
         >
           <div className="px-5 md:py-20 py-10 my-10 w-full h-full flex items-center justify-center">
-            <div className="text-center text-white">
+            {/* <div className="text-center text-white">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-red-700 via-blue-800 to-gray-600 text-transparent bg-clip-text">
   Grow your <br className="hidden md:block" />
   <span className="text-transparent bg-clip-text">Business</span> with Us
@@ -63,7 +63,7 @@ const GrowBusiness = () => {
 </Link>
 
 
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

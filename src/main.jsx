@@ -48,10 +48,12 @@ import AllDomesticItinerariesPage from "./pages/AllDomesticItinerariesPage.jsx";
 import AllPlacesToVisit from "./pages/AllPlacesToVisit.jsx";
 import ParticularVerifiedTravelAgentDetailsPage from "./pages/ParticularVerifiedTravelAgentDetailsPage.jsx";
 import TravelnWorldRegistrationPage from "./pages/TravelnWorldRegistrationPage.jsx";
+import { HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      <HelmetProvider>
       <BrowserRouter>
         <div className="font-dm-sans ">
           <Routes>
@@ -180,6 +182,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Routes>
         </div>
       </BrowserRouter>
+      </HelmetProvider>
     </Provider>
   </React.StrictMode>
 );

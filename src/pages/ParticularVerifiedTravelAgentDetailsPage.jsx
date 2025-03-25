@@ -166,8 +166,9 @@ const ParticularVerifiedTravelAgentDetailsPage = () => {
 
 <div className=" flex justify-start items-start gap-10 flex-wrap">
 {
- 
-  verifiedTravelAgentDetails.company.services_offered.map((service, index) => (
+   Array.isArray(verifiedTravelAgentDetails?.company?.services_offered) &&
+   verifiedTravelAgentDetails?.company?.services_offered.length > 0 &&
+  verifiedTravelAgentDetails?.company?.services_offered.map((service, index) => (
     <p key={index} className=" bg-blue-600 text-white rounded px-2 py-1">{service?.label}</p>
   ))
 }

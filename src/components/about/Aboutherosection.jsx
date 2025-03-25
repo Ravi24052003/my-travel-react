@@ -25,6 +25,8 @@ const TravelNWorld = () => {
           <h2 className="text-5xl font-bold text-blue-700 mb-6">Company Overview</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
             Travel n World is a global B2B travel platform, empowering travel professionals with marketing, networking, and expansion solutions.
+            We help travel agents grow their business by providing reliable B2B travel services across India. As a travel agent supplier, we work closely with agents to offer great deals on hotels, tours, and transport.
+ With our DMC travel partnerships in India, we make it easier for agents to arrange complete travel experiences, from local sightseeing to full holiday packages. 
           </p>
           <ul className="space-y-3 text-lg">
             <li><strong>Company Name:</strong> Travel n World</li>

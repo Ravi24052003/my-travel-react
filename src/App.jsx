@@ -23,6 +23,7 @@ import AboutUsSection from "./components/home/AboutUsSection";
 import TrendingPackage from "./components/home/TrendingPackage";
 import PlacesToVisit from "./components/home/PlacesToVisit";
 import Client2 from "./components/home/Client2";
+import { Helmet } from 'react-helmet-async';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -77,6 +78,11 @@ if (currentDate >= targetDate) {
 
   return (
         <>
+        <Helmet>
+          <title>TravelnWorld</title>
+          <meta name="description" content="TravelnWorld is a travel agency that provides the best travel services to its customers. We provide the best travel packages, hotels, and transport services." />
+        </Helmet>
+        
           <Navbar />
           <WeddingCarouselTop />
           <Herosection />
