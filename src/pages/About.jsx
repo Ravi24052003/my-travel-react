@@ -7,10 +7,18 @@ import AboutUsSection from "../components/about/AboutUsSection";
 import Navbar from "../components/global/Navbar";
 import Footer from "../components/global/Footer";
 import AboutHeroSectionVideo from "../components/about/AboutHeroSectionVideo";
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <>
+    <Helmet>
+        <title>Travel Website | About</title>
+        <meta name="description" content="Travel Website | About" />
+        <meta name="keywords" content="Travel Website | About" />
+        <meta property="og:url" content="https://www.travelnworld.com/about"></meta>
+    </Helmet>
+
       <Navbar />
       <AboutHeroSectionVideo />
       <AboutheroSection />
