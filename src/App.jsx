@@ -24,6 +24,7 @@ import TrendingPackage from "./components/home/TrendingPackage";
 import PlacesToVisit from "./components/home/PlacesToVisit";
 import Client2 from "./components/home/Client2";
 import { Helmet } from 'react-helmet-async';
+import axios from "axios";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,21 @@ const App = () => {
       clearTimeout(timer);
       clearTimeout(modalTimer);
     };
+  }, []);
+
+  let slug = "-sri-lankan-honeymoon-tour";
+
+  useEffect(()=>{
+  async function getApiData(){
+   const response = await axios.get(`https://admiredashboard.theholistay.in/public-itinerary/${slug}`);
+    
+   console.log("my name is ravi", response.data);
+
+  }
+
+  getApiData();
+
+
   }, []);
 
   const handleCloseModal = () => {
