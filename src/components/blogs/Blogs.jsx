@@ -135,7 +135,7 @@ const BlogCard = ({ post }) => (
           to={`/blog/${post?.blog_slug}`}
           className="text-blue-600 text-sm font-medium hover:underline"
         >
-    <div className="relative w-full h-[50%] rounded-t-lg overflow-hidden">
+    <div className="relative w-full h-48 rounded-t-lg overflow-hidden">
       <img
         src={`${conf.laravelBaseUrl}/${post?.blog_image}`}
         alt=""

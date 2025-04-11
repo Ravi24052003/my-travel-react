@@ -42,6 +42,21 @@ const BlogDetail = () => {
     ?.replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">");
 
+
+
+
+
+
+
+    useEffect(() => {
+      const images = document.querySelectorAll('#particular-blog-content img');
+      images.forEach((img, index) => {
+        img.style.float = index % 2 === 0 ? 'left' : 'right';
+        img.style.margin = index % 2 === 0 ? '0 16px 16px 0' : '0 0 16px 16px';
+      });
+    }, [newParticularBlog]);
+    
+
   return (
     <div>
       <Navbar />
@@ -101,16 +116,64 @@ const BlogDetail = () => {
             />
 
             {/* Author Bio */}
-            {particularBlog?.blog_author_name && (
-              <div className="mt-10 border-t border-gray-300 pt-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">About the Author</h3>
-                <p className="text-sm text-gray-600">
-                  {particularBlog?.blog_author_name} is a travel enthusiast who loves exploring new
-                  cultures and places.
-                </p>
-              </div>
-            )}
+            {/* Author Bio */}
+  <div className="border-t border-gray-300 my-10"></div>
+ 
+ {
+  particularBlog?.blog_author_name &&  <div className="flex items-center space-x-4">
+  <div>
+    <p className="text-gray-700 font-semibold">
+      Written by {particularBlog?.blog_author_name}
+    </p>
+    <p className="text-sm text-gray-500">
+      {particularBlog?.blog_author_name} is a travel enthusiast who loves exploring new
+      cultures and places.
+    </p>
+  </div>
+</div>
+ }
+
+  {/* Share Buttons */}
+  <div className="flex justify-between items-center mt-10">
+    <div className="flex space-x-4">
+      <a
+        href="#"
+        className="text-gray-500 hover:text-indigo-900 transition-colors"
+      >
+        <i className="fab fa-facebook fa-2x"></i>
+      </a>
+      <a
+        href="#"
+        className="text-gray-500 hover:text-indigo-900 transition-colors"
+      >
+        <i className="fab fa-twitter fa-2x"></i>
+      </a>
+      <a
+        href="#"
+        className="text-gray-500 hover:text-indigo-900 transition-colors"
+      >
+        <i className="fab fa-instagram fa-2x"></i>
+      </a>
+    </div>
+    <div className="flex space-x-4">
+      <a
+        href="/blog"
+        className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-800 transition-colors duration-300"
+      >
+        Back to Blogs
+      </a>
+      <a
+        href="/contact"
+        className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-700 transition-colors duration-300"
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+
           </div>
+
 
           {/* Sidebar with Contact Us form */}
           <div className="bg-gray-100 rounded-lg p-6 w-full md:w-1/3">
