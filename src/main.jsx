@@ -171,10 +171,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
            />
 
 
-           <Route
+           {/* <Route
            path="/sitemap.xml"
            element={<SitemapComponent />} 
-           />
+           /> */}
 
             <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
           <Route path="/dashboard-my-report" element={<DashboardMyreport/>} /> 

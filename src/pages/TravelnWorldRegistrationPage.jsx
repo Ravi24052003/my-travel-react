@@ -140,16 +140,37 @@ const dispatch = useDispatch();
      <Navbar />
        
 
-        <div className=" bg-gray-100 flex flex-col">
+        <div className=" bg-gray-100 flex flex-col items-center overflow-x-hidden">
 
+        <video
+        autoPlay
+        loop
+        muted
+        className="w-full h-full object-contain md:object-cover block md:hidden"
+      >
+        <source src="/Videos/unique_zone.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
         {/* Header Section with Registration Form */}
-        <header className="relative w-full h-[450px] bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/Images/Homepageimages/travel_n_world.png')" }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col lg:flex-row justify-between items-center px-4 lg:px-[70px]">
+        <header className="relative w-full h-[450px]  bg-contain bg-no-repeat bg-center hidden md:block" >
+
+          {/* Background Video */}
+        <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-contain md:object-cover hidden md:block"
+      >
+        <source src="/Videos/unique_zone.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+    <div className="absolute inset-0 bg-opacity-50 flex flex-col lg:flex-row justify-between items-center px-4 lg:px-[70px]">
       <div className="text-white max-w-md text-center lg:text-left lg:mb-0">
-        <h1 className="text-2xl lg:text-4xl font-bold">
+        {/* <h1 className="text-2xl lg:text-4xl font-bold">
           Looking For <span className="text-yellow-400">Genuine Travel Leads?</span>
-        </h1>
+        </h1> */}
       </div>
       <div className="bg-white px-4 py-2 shadow-lg h-auto rounded-md w-full max-w-sm hidden sm:block">
   {flashMessage && (
@@ -256,6 +277,115 @@ const dispatch = useDispatch();
 
     </div>
   </header>
+
+
+
+
+  <div className="bg-white px-4 py-2 shadow-lg h-auto rounded-md w-full max-w-sm md:hidden block">
+  {flashMessage && (
+    <div className="bg-white text-green-500 opacity-75 text-center font-bold p-2 rounded mb-2">
+      {flashMessage}
+    </div>
+  )}
+  
+  <h2 className="text-lg lg:text-xl font-bold text-center text-orange-600">
+    List Your Company <span className="text-red-500">FREE</span>
+  </h2>
+  <p className="text-center text-gray-500">
+    & Expand Your Business Quickly!
+  </p>
+
+  <form onSubmit={handleFormData}>
+
+    <div className="mb-1">
+      <label htmlFor="name" className="block text-gray-700 text-sm">Your Name</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+        className="w-full border rounded-md p-1 text-sm"
+      />
+    </div>
+
+    <div className="mb-1">
+      <label htmlFor="phone" className="block text-gray-700 text-sm">Mobile No</label>
+      <div className="flex">
+        <span className="inline-flex items-center px-2 bg-gray-200 text-gray-700 rounded-l-md text-sm">+91</span>
+        <input
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          id="phone"
+          type="number"
+          name="phone"
+          placeholder="Enter Your Mobile No"
+          className="w-full border rounded-r-md p-1 text-sm"
+        />
+      </div>
+    </div>
+
+    <div className="mb-1">
+      <label htmlFor="email" className="block text-gray-700 text-sm">Email ID</label>
+      <input
+        value={formData.email}
+        onChange={handleChange}
+        required
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter Your Email ID"
+        className="w-full border rounded-md p-1 text-sm"
+      />
+    </div>
+
+    <div className="mb-1">
+      <label htmlFor="company_name" className="block text-gray-700 text-sm">Company Name</label>
+      <input
+        value={formData.company_name}
+        onChange={handleChange}
+        required
+        id="company_name"
+        type="text"
+        name="company_name"
+        placeholder="Enter Company Name"
+        className="w-full border rounded-md p-1 text-sm"
+      />
+    </div>
+
+    <div className="mb-1">
+      <label htmlFor="business-type" className="block text-gray-700 text-sm">Business Type</label>
+      <select id="business-type" name="business-type" className="w-full border rounded-md p-1 text-sm">
+        <option value="">Select Business Type</option>
+        <option value="travel-agent">Travel Agent</option>
+        <option value="tour-operator">Tour Operator</option>
+        <option value="hotel">Hotel</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div className="flex items-center space-x-2 mb-1">
+      <input type="checkbox" id="terms" name="terms" className="h-4 w-4" />
+      <label htmlFor="terms" className="text-gray-600 text-xs">
+        Yes, I agree to all the <a href="#" className="text-blue-600 underline">Terms & Conditions</a>, <a href="#" className="text-blue-600 underline">Privacy Policy</a> stated herein.
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 text-sm"
+    >
+      Join For Free
+    </button>
+
+  </form>
+</div>
+
+
+
   
   
   

@@ -59,6 +59,8 @@ const destinationOptions = [
     { value: `Estonia`, label: "Estonia" },
     { value: `Australia`, label: "Australia" },
     { value: `Turkey`, label: "Turkey" },
+    {value: `Kenya`, label: `Kenya`},
+    {value: `South-Africa`, label: `South Africa`}
 ];
 
 

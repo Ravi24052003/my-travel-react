@@ -76,6 +76,8 @@ const internationalLinks = [
 { to: `/tour-packages/Estonia`, text: "Estonia" },
 { to: `/tour-packages/Australia`, text: "Australia" },
 { to: `/tour-packages/Turkey`, text: "Turkey" },
+{to: `/tour-packages/Kenya`, text: "Kenya"},
+{to: `/tour-packges/South-Africa`, text: "South Africa"}
 ];
 
 

@@ -65,7 +65,7 @@ const BlogDetail = () => {
           <div className="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
         </div>
       ) : (
-        <div className="md:flex md:justify-between px-4 md:space-x-8 mt-8">
+        <div className="md:flex md:justify-between px-1 md:space-x-2 mt-8">
           {/* Blog Content */}
           <div className="bg-white p-6 shadow-lg rounded-lg flex-grow">
             {particularBlog?.blog_image && (
@@ -175,8 +175,14 @@ const BlogDetail = () => {
           </div>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> origin/main
           {/* Sidebar with Contact Us form */}
-          <div className="bg-gray-100 rounded-lg p-6 w-full md:w-1/3">
+          <div className=" rounded-lg p-2 mx-auto w-[550px] md:w-[350px] ">
             {/* Recent Blogs Section */}
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Recent Blogs</h3>
             <div className="space-y-4 mb-8">
@@ -188,7 +194,7 @@ const BlogDetail = () => {
                   <img
                     src={`${conf.laravelBaseUrl}/${post.blog_image}`}
                     alt={post?.title}
-                    className="h-40 w-full object-cover rounded-md mb-4"
+                    className="h-50 w-full object-cover rounded-md mb-4"
                   />
                   <h4 className="text-lg font-semibold text-gray-800 mb-2 truncate">
                     {post.blog_title}
