@@ -66,7 +66,7 @@ const BlogDetail = () => {
         </div>
       ) : (
         <div className="md:flex md:justify-between px-1 md:space-x-2 mt-8">
-          {/* Blog Content */}
+          {/* Blog Content .*/}
           <div className="bg-white p-6 shadow-lg rounded-lg flex-grow">
             {particularBlog?.blog_image && (
               <div className="overflow-hidden rounded-lg mb-6">
