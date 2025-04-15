@@ -178,7 +178,7 @@ const BlogDetail = () => {
           {/* Sidebar with Contact Us form */}
           <div className=" rounded-lg p-2 mx-auto w-[550px] md:w-[350px] ">
             {/* Recent Blogs Section */}
-            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Recent Blogs</h3>
+            {/* <h3 className="text-2xl font-semibold text-gray-800 mb-6">Recent Blogs</h3>
             <div className="space-y-4 mb-8">
               {recentBlogs?.map((post) => (
                 <div
@@ -201,7 +201,36 @@ const BlogDetail = () => {
                   </Link>
                 </div>
               ))}
-            </div>
+            </div> */}
+
+{/*updated recent blogs section*/}
+
+            <h3 className="text-2xl font-semibold text-gray-800 mb-6">Recent Blogs</h3>
+  <div className="space-y-4 mb-8">
+    {recentBlogs
+      ?.filter((post) => post.blog_slug !== blog_slug) // Exclude current blog
+      .map((post) => (
+        <div
+          key={post.id}
+          className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+        >
+          <img
+            src={`${conf.laravelBaseUrl}/${post.blog_image}`}
+            alt={post?.title}
+            className="h-50 w-full object-cover rounded-md mb-4"
+          />
+          <h4 className="text-lg font-semibold text-gray-800 mb-2 truncate">
+            {post.blog_title}
+          </h4>
+          <Link
+            to={`/blog/${post?.blog_slug}`}
+            className="text-indigo-600 font-medium hover:underline"
+          >
+            Read more
+          </Link>
+        </div>
+      ))}
+  </div>
 
             {/* Contact Us Form */}
             <div className="bg-white p-4 rounded-lg shadow-md">
