@@ -175,12 +175,6 @@ const BlogDetail = () => {
           </div>
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> origin/main
           {/* Sidebar with Contact Us form */}
           <div className=" rounded-lg p-2 mx-auto w-[550px] md:w-[350px] ">
             {/* Recent Blogs Section */}
