@@ -98,7 +98,8 @@ if (currentDate >= targetDate) {
           <title>TravelnWorld</title>
           <meta name="description" content="TravelnWorld is a travel agency that provides the best travel services to its customers. We provide the best travel packages, hotels, and transport services." />
         </Helmet>
-        
+
+        {/* <div className="mx-[450] text-5xl font-bold"></div> */}
           <Navbar />
           <WeddingCarouselTop />
           <Herosection />

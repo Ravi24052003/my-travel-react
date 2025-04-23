@@ -7,10 +7,18 @@ import Navbar from "../components/global/Navbar";
 import Footer from "../components/global/Footer";
 import { signupAsync } from "../features/signup/signupSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 export default function TravelnWorldRegistrationPage() {
 const dispatch = useDispatch();
+
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [activeForm, setActiveForm] = useState("signin");
+
+  
+
   const [flashMessage, setFlashMessage] = useState("");
 
   const [formData, setFormData] = useState({
@@ -134,7 +142,109 @@ const dispatch = useDispatch();
     autoplaySpeed: 3000,
   };
 
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
+
+
+
+
+  const renderForm = () => {
+    if (activeForm === "signin") {
+      return (
+        <form className="space-y-4">
+          <div>
+            <label htmlFor="signin-email" className="block text-sm font-medium text-gray-700">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="signin-email"
+              placeholder="Enter your email"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="signin-password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              id="signin-password"
+              placeholder="Enter your password"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            Sign In
+          </button>
+        </form>
+      );
+    } else {
+      return (
+        <form className="space-y-4">
+          <div>
+            <label htmlFor="signup-name" className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              id="signup-name"
+              placeholder="Enter your name"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="signup-email" className="block text-sm font-medium text-gray-700">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="signup-email"
+              placeholder="Enter your email"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="signup-password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              id="signup-password"
+              placeholder="Create a password"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="signup-confirm-password" className="block text-sm font-medium text-gray-700">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="signup-confirm-password"
+              placeholder="Confirm your password"
+              className="mt-1 w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            Sign Up
+          </button>
+        </form>
+      );
+    }
+  };
   return (
     <>
      <Navbar />
@@ -374,7 +484,7 @@ const dispatch = useDispatch();
       </label>
     </div>
 
-    <button
+    <button 
       type="submit"
       className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 text-sm"
     >
@@ -417,12 +527,52 @@ const dispatch = useDispatch();
               <p className="text-gray-600">(Lead Management Panel)</p>
             </div>
           </div>
-  
+  {/* grow section button */}
           <div className="mt-8">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 ">
+            <button onClick={toggleModal} className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 ">
               Join For Free
             </button>
           </div>
+           {/* Modal */}
+           {isModalOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 relative w-full max-w-lg">
+    {/* Close Button */}
+    <button
+        onClick={toggleModal}
+        className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+      >
+        <span className="sr-only">Close</span>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M10 8.586L15.293 3.293a1 1 0 011.414 1.414L11.414 10l5.293 5.293a1 1 0 01-1.414 1.414L10 11.414l-5.293 5.293a1 1 0 01-1.414-1.414L8.586 10 3.293 4.707a1 1 0 011.414-1.414L10 8.586z" clipRule="evenodd" />
+        </svg>
+      </button>
+    
+  <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
+    <div className="flex justify-around mb-6">
+      <button
+        onClick={() => setActiveForm("signin")}
+        className={`px-6 py-2 rounded-lg ${
+          activeForm === "signin" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700"
+        }`}
+      >
+        Sign In
+      </button>
+      <button
+        onClick={() => setActiveForm("signup")}
+        className={`px-6 py-2 rounded-lg ${
+          activeForm === "signup" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700"
+        }`}
+      >
+        Sign Up
+      </button>
+    </div>
+    {renderForm()}
+  </div>
+  </div>
+</div>
+)}
+
         </section>
   
         {/* Trusted Agents Section */}
@@ -470,7 +620,7 @@ const dispatch = useDispatch();
         </div>
   
         <div className="mt-12">
-          <button className="bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold shadow-md hover:bg-blue-700 transition duration-300">
+          <button onClick={toggleModal} className="bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold shadow-md hover:bg-blue-700 transition duration-300">
             Join For Free
           </button>
         </div>
